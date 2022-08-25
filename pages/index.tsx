@@ -103,6 +103,9 @@ export const Page: NextPage = () => {
           </Box>
         </Section>
         <Section delay={0.2}>
+          <Heading as="h3" variant="section-title">
+            Bio
+          </Heading>
           <BioSection>
             <BioYear>1996</BioYear>
             Born in ChongQing （重庆）, China.

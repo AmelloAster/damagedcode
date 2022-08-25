@@ -14,8 +14,10 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Icon
 } from '@chakra-ui/react';
+import { IoLogoGithub } from 'react-icons/io5';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from './ThemeToggleButton';
 
@@ -74,6 +76,7 @@ const NavBar: FCC<{ path: string }> = props => {
           width={{ base: 'full', md: 'auto' }}
           alignItems="center"
           flexGrow={1}
+          gap={2}
           mt={{ base: 4, nmd: 0 }}
         >
           <LinkItem href="/works" path={path}>
@@ -82,6 +85,14 @@ const NavBar: FCC<{ path: string }> = props => {
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
+          <Link
+            href="https://github.com/AmelloAster/damagedcode"
+            isExternal={true}
+            color="#0E0D14"
+            className="flex items-center gap-2"
+          >
+            <Icon as={IoLogoGithub} /> Source
+          </Link>
         </Stack>
         <Box flex={1} textAlign="end">
           <ThemeToggleButton />
@@ -102,8 +113,11 @@ const NavBar: FCC<{ path: string }> = props => {
                 </NextLink>
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
-                </NextLink>{' '}
-                <NextLink href="/" passHref>
+                </NextLink>
+                <NextLink
+                  href="https://github.com/AmelloAster/damagedcode"
+                  passHref
+                >
                   <MenuItem as={Link}>View Sources</MenuItem>
                 </NextLink>
               </MenuList>
