@@ -6,7 +6,7 @@ import Fonts from '../components/Fonts';
 import theme from '../lib/theme';
 import { AnimatePresence } from 'framer-motion';
 import { appWithTranslation } from 'next-i18next';
-
+import Footer from '@components/Footer';
 import '../styles/globals.css';
 import '../styles/weather-3d-icons.scss';
 
@@ -22,6 +22,7 @@ const Website: NextPage<AppProps> = ({
         <AnimatePresence exitBeforeEnter initial={true}>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
+        <Footer />
       </Layout>
     </ChakraProvider>
   );

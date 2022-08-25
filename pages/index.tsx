@@ -28,6 +28,21 @@ import {
 
 import next_snp_01 from '@public/images/works/next_snp_01.gif';
 
+const iconList = [
+  {
+    icon: IoLogoGithub,
+    href: 'https://github.com/AmelloAster'
+  },
+  {
+    icon: IoLogoInstagram,
+    href: 'https://www.instagram.com/amelloaster69/'
+  },
+  {
+    icon: IoLogoStackoverflow,
+    href: 'https://www.instagram.com/amelloaster69/'
+  }
+];
+
 export const Page: NextPage = () => {
   return (
     <Article title="">
@@ -74,7 +89,7 @@ export const Page: NextPage = () => {
             from planning and design all the way to solving real problems with
             code. To solving real life problems with code. When not online, she
             likes to create paintings with her drawing board.{' '}
-            <NextLink href="/works/clash-comet">
+            <NextLink href="/works/ClashComet">
               <Link>ClashComet</Link>
             </NextLink>
             .
@@ -108,53 +123,34 @@ export const Page: NextPage = () => {
             On the web
           </Heading>
           <List>
-            <ListItem>
-              <Link href="https://github.com/AmelloAster" isExternal={true}>
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoGithub} />}
-                >
-                  @AmelloAster
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="https://www.instagram.com/amelloaster69/"
-                isExternal={true}
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoInstagram} />}
-                >
-                  @AmelloAster
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="https://stackoverflow.com/users/10175548/amelloaster"
-                isExternal={true}
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoStackoverflow} />}
-                >
-                  @AmelloAster
-                </Button>
-              </Link>
-            </ListItem>
+            {iconList.map(i => (
+              <ListItem key={i.href}>
+                <Link href={i.href} isExternal={true}>
+                  <Button
+                    variant="ghost"
+                    colorScheme="teal"
+                    leftIcon={<Icon as={i.icon} />}
+                  >
+                    @AmelloAster
+                  </Button>
+                </Link>
+              </ListItem>
+            ))}
           </List>
           <SimpleGrid columns={[1, 2, 2]} gap={6}>
             <GridItem
               title="React and Next.js Snippets"
               thumbnail={next_snp_01}
-              href="https://juejin.cn/post/6844903656349761550"
+              href="http://react-next-snippets.co/"
             />
           </SimpleGrid>
+          <Box textAlign="center" my={4}>
+            <NextLink href="/posts">
+              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+                Popular Posts
+              </Button>
+            </NextLink>
+          </Box>
         </Section>
       </Container>
     </Article>

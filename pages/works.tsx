@@ -23,6 +23,11 @@ const Works: NextPage = () => {
             A Clash GUI build with Tauri
           </WorkGridItem>
         </Section>
+      </SimpleGrid>
+      <Heading as="h3" fontSize={20} mb={4}>
+        Collaborations
+      </Heading>
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.1}>
           <WorkGridItem
             id="ReactAndNextSnippets"

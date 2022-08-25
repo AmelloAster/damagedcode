@@ -20,7 +20,7 @@ const Work: NextPage = () => {
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Website</Meta>
-            <Link className="ml-2" href="http://react-next-snippets.co/s">
+            <Link className="ml-2" href="http://react-next-snippets.co/">
               http://react-next-snippets.co/ <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
