@@ -88,7 +88,7 @@ const NavBar: FCC<{ path: string }> = props => {
           <Link
             href="https://github.com/AmelloAster/damagedcode"
             isExternal={true}
-            color="#0E0D14"
+            color={useColorModeValue('"#0E0D14"', 'whiteAlpha.900')}
             className="flex items-center gap-2"
           >
             <Icon as={IoLogoGithub} /> Source
