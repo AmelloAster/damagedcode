@@ -26,6 +26,7 @@ import {
   IoLogoStackoverflow
 } from 'react-icons/io5';
 
+import mantineThumbnail from '../public/images/works/mantine_01.png';
 import next_snp_01 from '@public/images/works/next_snp_01.gif';
 
 const iconList = [
@@ -145,6 +146,11 @@ export const Page: NextPage = () => {
               title="React and Next.js Snippets"
               thumbnail={next_snp_01}
               href="http://react-next-snippets.co/"
+            />
+            <GridItem
+              title="Mantine"
+              thumbnail={mantineThumbnail}
+              href="https://mantine.dev/"
             />
           </SimpleGrid>
           <Box textAlign="center" my={4}>

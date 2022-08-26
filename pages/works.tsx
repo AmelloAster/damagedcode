@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
 
-import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react';
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
 import Section from '@components/Section';
 import { WorkGridItem } from '@components/GridItem';
 
 import clashThumbnail from '../public/images/works/clash.webp';
-import nextSnpThumbnail from '../public/images/works/next_snp.png';
+import nextSnpThumbnail from '../public/images/works/next_snp_01.gif';
+import mantineThumbnail from '../public/images/works/mantine_01.png';
 
 const Works: NextPage = () => {
   return (
@@ -27,7 +28,7 @@ const Works: NextPage = () => {
       <Heading as="h3" fontSize={20} mb={4}>
         Collaborations
       </Heading>
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={[1, 2, 2]} gap={6}>
         <Section delay={0.1}>
           <WorkGridItem
             id="ReactAndNextSnippets"
@@ -35,6 +36,15 @@ const Works: NextPage = () => {
             thumbnail={nextSnpThumbnail}
           >
             React and Next.js Snippets with TypeScript support as well!🚀
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="Mantine"
+            title="Mantine"
+            thumbnail={mantineThumbnail}
+          >
+            A fully featured React components library
           </WorkGridItem>
         </Section>
       </SimpleGrid>
