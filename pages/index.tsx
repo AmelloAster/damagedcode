@@ -25,6 +25,7 @@ import {
   IoLogoGithub,
   IoLogoStackoverflow
 } from 'react-icons/io5';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import mantineThumbnail from '../public/images/works/mantine_01.png';
 import next_snp_01 from '@public/images/works/next_snp_01.gif';
@@ -40,7 +41,7 @@ const iconList = [
   },
   {
     icon: IoLogoStackoverflow,
-    href: 'https://www.instagram.com/amelloaster69/'
+    href: 'https://stackoverflow.com/users/10175548/amelloaster'
   }
 ];
 
@@ -165,5 +166,11 @@ export const Page: NextPage = () => {
     </Article>
   );
 };
+
+export const getStaticProps = async ({ locale }: any) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+});
 
 export default Page;

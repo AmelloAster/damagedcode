@@ -20,6 +20,8 @@ import {
 import { IoLogoGithub } from 'react-icons/io5';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from './ThemeToggleButton';
+import I18nToggleButton from './I18nToggleButton';
+import { useTranslation } from 'next-i18next';
 
 import Logo from './Logo';
 
@@ -46,6 +48,7 @@ const LinkItem: FCC<{ href: string; path: string }> = ({
 
 const NavBar: FCC<{ path: string }> = props => {
   const { path } = props;
+  const { t } = useTranslation('common');
 
   return (
     <Box
@@ -80,10 +83,10 @@ const NavBar: FCC<{ path: string }> = props => {
           mt={{ base: 4, nmd: 0 }}
         >
           <LinkItem href="/works" path={path}>
-            Works
+            {t('works')}
           </LinkItem>
           <LinkItem href="/posts" path={path}>
-            Posts
+            {t('posts')}
           </LinkItem>
           <Link
             href="https://github.com/AmelloAster/damagedcode"
@@ -91,11 +94,14 @@ const NavBar: FCC<{ path: string }> = props => {
             color={useColorModeValue('"#0E0D14"', 'whiteAlpha.900')}
             className="flex items-center gap-2"
           >
-            <Icon as={IoLogoGithub} /> Source
+            <Icon as={IoLogoGithub} /> {t('source')}
           </Link>
         </Stack>
         <Box flex={1} textAlign="end">
-          <ThemeToggleButton />
+          <Box display="flex" gap={4}>
+            <I18nToggleButton />
+            <ThemeToggleButton />
+          </Box>
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
@@ -106,19 +112,19 @@ const NavBar: FCC<{ path: string }> = props => {
               />
               <MenuList>
                 <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                  <MenuItem as={Link}>{t('about')}</MenuItem>
                 </NextLink>
                 <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
+                  <MenuItem as={Link}> {t('works')}</MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
+                  <MenuItem as={Link}> {t('posts')}</MenuItem>
                 </NextLink>
                 <NextLink
                   href="https://github.com/AmelloAster/damagedcode"
                   passHref
                 >
-                  <MenuItem as={Link}>View Sources</MenuItem>
+                  <MenuItem as={Link}>{t('vSource')}</MenuItem>
                 </NextLink>
               </MenuList>
             </Menu>

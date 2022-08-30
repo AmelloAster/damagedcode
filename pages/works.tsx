@@ -7,6 +7,7 @@ import { WorkGridItem } from '@components/GridItem';
 import clashThumbnail from '../public/images/works/clash.webp';
 import nextSnpThumbnail from '../public/images/works/next_snp_01.gif';
 import mantineThumbnail from '../public/images/works/mantine_01.png';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Works: NextPage = () => {
   return (
@@ -51,5 +52,10 @@ const Works: NextPage = () => {
     </Container>
   );
 };
+export const getStaticProps = async ({ locale }: any) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+});
 
 export default Works;

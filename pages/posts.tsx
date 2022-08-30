@@ -7,6 +7,7 @@ import Self_Taught_Story from '@public/images/posts/Self_Taught_Story.webp';
 import AppleMusic_vs_Spotify from '@public/images/posts/AppleMusic_vs_Spotify.webp';
 import Bit_Obsessive from '@public/images/posts/Bit_Obsessive.jpeg';
 import How_JavaScript_Works from '@public/images/posts/How_JavaScript_Works.jpeg';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Posts = () => (
   <Article title="Posts">
@@ -41,5 +42,11 @@ const Posts = () => (
     </Container>
   </Article>
 );
+
+export const getStaticProps = async ({ locale }: any) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+});
 
 export default Posts;
